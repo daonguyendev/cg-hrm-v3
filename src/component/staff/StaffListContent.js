@@ -82,6 +82,7 @@ function StaffListContent() {
                     <th>Age</th>
                     <th>Start date</th>
                     <th>Salary</th>
+                    <th colSpan={2}>Action</th>
                   </tr>
                 </thead>
                 <tfoot>
@@ -92,10 +93,11 @@ function StaffListContent() {
                     <th>Age</th>
                     <th>Start date</th>
                     <th>Salary</th>
+                    <th colSpan={2}>Action</th>
                   </tr>
                 </tfoot>
                 <tbody>
-                  {staffs.map((staff) => (
+                  {staffs && staffs.map((staff) => (
                     <tr key={staff.id}>
                       <td>{staff.name} </td>
                       <td>{staff.position} </td>
@@ -103,12 +105,12 @@ function StaffListContent() {
                       <td>{staff.age} </td>
                       <td>{staff.startDate} </td>
                       <td>{staff.salary} </td>
-                      {/* <td>
-                        <Link to={`/book/${staff.id}`}>Detail</Link>
+                      <td>
+                        <Link to={`/detail-staff/${staff.id}`}>Detail</Link>
                       </td>
                       <td>
-                        <Link to={`/book/edit/${staff.id}`}>Edit</Link>
-                      </td> */}
+                        <Link to={`/edit-staff/${staff.id}`}>Edit</Link>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
